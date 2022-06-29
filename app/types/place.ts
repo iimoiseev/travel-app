@@ -1,4 +1,5 @@
 export interface IPlace {
+  slug: string;
   location: string;
   imagePath: string;
   description: string;
