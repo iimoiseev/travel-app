@@ -1,18 +1,30 @@
+import { Api_Url } from '../../app/constants';
 import { IPlace } from '../../app/types/place';
-import japanImg from '../../assets/image/a0002487_main.jpg';
+
 import {
   NextApiRequest,
   NextApiResponse,
 } from '../../node_modules/next/dist/shared/lib/utils';
 const places: IPlace[] = [
   {
-    slug: 'tokyo',
-    location: 'Japan',
-    imagePath: japanImg.src,
+    slug: 'Kyoto',
+    location: { country: 'Japan', sity: 'Kyoto' },
+    imagePath: `/images/places/Japan.jpg`,
     description: 'description',
     rating: 5,
     duration: '10 day',
     distance: 10555,
+    googleMapLink: 'string',
+    mapImage: 'hi',
+  },
+  {
+    slug: 'Venezia',
+    location: { country: 'Italy', sity: 'Venezia' },
+    imagePath: `/images/places/Italy.jpg`,
+    description: 'description',
+    rating: 4,
+    duration: '11 day',
+    distance: 1555,
     googleMapLink: 'string',
     mapImage: 'hi',
   },

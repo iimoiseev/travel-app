@@ -1,27 +1,42 @@
 import Layout from '../app/components/common/Layout';
 import { NextPage, GetStaticProps } from 'next';
 import { IPlace } from '../app/types/place';
-import SearchSection from '../app/components/elements/Home/SearchSection/SearchSection';
+import Search from '../app/components/elements/Search/Search';
+import Filters from '../app/components/elements/Filters/Filters';
+import HeadingSearchSection from '../app/components/elements/Home/HeadingSearchSection/HeadingSearchSection';
+import { Api_Url } from '../app/constants';
+import PopularPlaces from '../app/components/elements/Home/PopularPlaces/PopularPlaces';
+import { useState } from 'react';
+
 interface IHome {
-  places: IPlace[];
+  initialPlaces: IPlace[];
 }
-const Home: NextPage<IHome> = ({ places }) => {
+
+const Home: NextPage<IHome> = ({ initialPlaces }) => {
+  const [places, setPlaces] = useState(initialPlaces);
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <Layout>
+      <HeadingSearchSection />
       <div style={{ width: '80%', margin: '0 auto' }}>
-        <SearchSection />
+        <Search
+          setPlaces={setPlaces}
+          initialPlaces={initialPlaces}
+          setIsLoading={setIsLoading}
+        />
+        <Filters setPlaces={setPlaces} />
+        <PopularPlaces places={places} isLoading={isLoading} />
       </div>
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const result = await fetch('http:localhost:3000/api/places');
-  const places = await result.json();
-
+  const result = await fetch(`${Api_Url}/api/places`);
+  const initialPlaces = await result.json();
   return {
     props: {
-      places,
+      initialPlaces,
     },
   };
 };

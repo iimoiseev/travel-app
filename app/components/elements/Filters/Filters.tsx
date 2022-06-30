@@ -1,6 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import style from './Filters.module.scss';
-
+import cn from 'classnames';
+import { TypeSetState } from '../../../types/common';
+import { IPlace } from '../../../types/place';
 const sities = [
   {
     location: '1Paris',
@@ -21,11 +23,23 @@ const sities = [
     location: '6Paris',
   },
 ];
-const Filters: FC = () => {
+interface IFilters {
+  setPlaces: TypeSetState<IPlace[]>;
+}
+const Filters: FC<IFilters> = ({ setPlaces }) => {
+  const [filter, setFilter] = useState('');
   return (
     <div className={style.wrapper}>
       {sities.map((sity) => (
-        <button key={sity.location}>{sity.location}</button>
+        <button
+          onClick={() => setFilter(sity.location)}
+          className={cn({
+            [style.active]: sity.location === filter,
+          })}
+          key={sity.location}
+        >
+          {sity.location}
+        </button>
       ))}
     </div>
   );
