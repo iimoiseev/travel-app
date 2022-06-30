@@ -1,12 +1,18 @@
 import Layout from '../app/components/common/Layout';
 import { NextPage, GetStaticProps } from 'next';
 import { IPlace } from '../app/types/place';
-
+import SearchSection from '../app/components/elements/Home/SearchSection/SearchSection';
 interface IHome {
   places: IPlace[];
 }
 const Home: NextPage<IHome> = ({ places }) => {
-  return <Layout>{places.map((item: IPlace) => item.location)}</Layout>;
+  return (
+    <Layout>
+      <div style={{ width: '80%', margin: '0 auto' }}>
+        <SearchSection />
+      </div>
+    </Layout>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
