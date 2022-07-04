@@ -25,16 +25,15 @@ const PopularPlaces: FC<IPopularPlaces> = ({ places, isLoading }) => {
             height={200}
             borderRadius="20px"
             baseColor="#1b1b1d"
-            highlightcolor="#2c2c2e"
+            highlightColor="#2c2c2e"
           ></Skeleton>
         </div>
       ) : places.length ? (
         places.map((place: IPlace) => (
-          <Link href={`place/${place.slug}`}>
+          <Link href={`place/${place.slug}`} key={place.slug}>
             <a
               className={style.item}
               style={{ backgroundImage: `url(${place.imagePath})` }}
-              key={place.slug}
             >
               <div className={style.heading}>
                 {`${place.location.sity},${place.location.country}`}
