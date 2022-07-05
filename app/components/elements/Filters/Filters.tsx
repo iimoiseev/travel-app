@@ -3,42 +3,58 @@ import style from './Filters.module.scss';
 import cn from 'classnames';
 import { TypeSetState } from '../../../types/common';
 import { IPlace } from '../../../types/place';
-const sities = [
+const countries = [
   {
-    location: '1Paris',
+    location: 'France',
   },
   {
-    location: '2Paris',
+    location: 'Japan',
   },
   {
-    location: '3Paris',
+    location: 'Italy',
   },
   {
-    location: '4Paris',
+    location: 'Brazil',
   },
   {
-    location: '5Paris',
+    location: 'USA',
   },
   {
-    location: '6Paris',
+    location: 'Russia',
   },
 ];
 interface IFilters {
   setPlaces: TypeSetState<IPlace[]>;
+  initialPlaces: IPlace[];
 }
-const Filters: FC<IFilters> = ({ setPlaces }) => {
+const Filters: FC<IFilters> = ({ setPlaces, initialPlaces }) => {
   const [filter, setFilter] = useState('');
+
+  const handlerFilter = (location: string) => {
+    if (filter === location) {
+      setPlaces(initialPlaces);
+      setFilter('');
+    } else {
+      setPlaces(
+        initialPlaces.filter(
+          (place) =>
+            place.location.country.toLowerCase() === location.toLowerCase()
+        )
+      );
+      setFilter(location);
+    }
+  };
   return (
     <div className={style.wrapper}>
-      {sities.map((sity) => (
+      {countries.map((country) => (
         <button
-          onClick={() => setFilter(sity.location)}
+          onClick={() => handlerFilter(country.location)}
           className={cn({
-            [style.active]: sity.location === filter,
+            [style.active]: country.location === filter,
           })}
-          key={sity.location}
+          key={country.location}
         >
-          {sity.location}
+          {country.location}
         </button>
       ))}
     </div>
