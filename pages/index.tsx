@@ -32,7 +32,7 @@ const Home: NextPage<IHome> = ({ initialPlaces }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const result = await fetch(`${Api_Url}/api/places`);
+  const result = await fetch(`${Api_Url}/places`);
   const initialPlaces = await result.json();
   return {
     props: {

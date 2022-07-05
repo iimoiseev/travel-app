@@ -1,11 +1,8 @@
-import { Api_Url } from '../../app/constants';
-import { IPlace } from '../../app/types/place';
+import { IPlace } from '../../../app/types/place';
 
-import {
-  NextApiRequest,
-  NextApiResponse,
-} from '../../node_modules/next/dist/shared/lib/utils';
-const places: IPlace[] = [
+import { NextApiRequest, NextApiResponse } from 'next/dist/shared/lib/utils';
+
+export const places: IPlace[] = [
   {
     slug: 'Kyoto',
     location: { country: 'Japan', sity: 'Kyoto' },
