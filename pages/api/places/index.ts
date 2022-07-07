@@ -4,28 +4,30 @@ import { NextApiRequest, NextApiResponse } from 'next/dist/shared/lib/utils';
 
 export const places: IPlace[] = [
   {
-    slug: 'Kyoto',
-    location: { country: 'Japan', sity: 'Kyoto' },
-    imagePath: `/images/places/Japan.jpg`,
+    slug: 'tokyo',
     description:
       'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,',
+    imagePath: 'http://localhost:3000/images/places/japan.jpg',
+    location: { country: 'Japan', sity: 'Kyoto' },
     rating: 5,
-    duration: '10 day',
-    distance: 10555,
-    googleMapLink: 'string',
-    mapImage: 'hi',
+    duration: '10 days',
+    distance: 10453,
+    googleMapLink: 'wefewf',
+    mapImage: 'egfw',
+    // coordinates: [-58.3816, -34.6037],
   },
   {
-    slug: 'Venezia',
-    location: { country: 'Italy', sity: 'Venezia' },
-    imagePath: `/images/places/Italy.jpg`,
+    slug: 'venezia',
     description:
       'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,',
-    rating: 4,
-    duration: '11 day',
-    distance: 1555,
-    googleMapLink: 'string',
-    mapImage: 'hi',
+    imagePath: 'http://localhost:3000/images/places/italy.jpg',
+    location: { country: 'Italy', sity: 'Venezia' },
+    rating: 5,
+    duration: '7 days',
+    distance: 9453,
+    googleMapLink: 'wefewf',
+    mapImage: 'egfw',
+    // coordinates: [-58.3816, -34.6037],
   },
 ];
 
