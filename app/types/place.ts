@@ -4,6 +4,7 @@ export type TypeLocation = {
 };
 
 export interface IPlace {
+  _id: string;
   slug: string;
   location: TypeLocation;
   imagePath: string;
@@ -11,8 +12,6 @@ export interface IPlace {
   rating: number;
   duration: string;
   distance: number;
-  googleMapLink: string;
-  mapImage: string;
 }
 
 export interface IFav {

@@ -9,7 +9,7 @@ import Wrapper from './Wrapper/Wrapper';
 interface IPlacePage {
   place: IPlace;
 }
-const Place: FC<IPlacePage> = ({ place }) => {
+export const Place: FC<IPlacePage> = ({ place }) => {
   return (
     <Layout isMaxWidth={true}>
       <Wrapper imagePath={place.imagePath}>
