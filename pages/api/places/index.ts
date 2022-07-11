@@ -1,4 +1,4 @@
-import { IPlace } from '../../../app/types/place';
+import { IPlace } from '@/types/place';
 
 import { NextApiRequest, NextApiResponse } from 'next/dist/shared/lib/utils';
 

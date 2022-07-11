@@ -1,11 +1,11 @@
-import Layout from '../app/components/common/Layout';
+import Layout from '@/components/common/Layout';
 import { NextPage, GetStaticProps } from 'next';
-import { IPlace } from '../app/types/place';
-import Search from '../app/components/elements/Search/Search';
-import Filters from '../app/components/elements/Filters/Filters';
-import HeadingSearchSection from '../app/components/elements/Home/HeadingSearchSection/HeadingSearchSection';
-import { Api_Url } from '../app/constants';
-import PopularPlaces from '../app/components/elements/Home/PopularPlaces/PopularPlaces';
+import { IPlace } from '@/types/place';
+import Search from '@/elements/Search/Search';
+import Filters from '@/elements/Filters/Filters';
+import HeadingSearchSection from '@/elements/Home/HeadingSearchSection/HeadingSearchSection';
+import { Api_Url } from '@/constants';
+import PopularPlaces from '@/elements/Home/PopularPlaces/PopularPlaces';
 import { useState } from 'react';
 
 interface IHome {

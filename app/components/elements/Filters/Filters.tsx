@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 import style from './Filters.module.scss';
 import cn from 'classnames';
-import { TypeSetState } from '../../../types/common';
-import { IPlace } from '../../../types/place';
+import { TypeSetState } from '@/types/common';
+import { IPlace } from '@/types/place';
 const countries = [
   {
     location: 'France',

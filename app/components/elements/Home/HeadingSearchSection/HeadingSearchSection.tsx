@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import style from './HeadingSearchSection.module.scss';
-import mapImage from '../../../../../assets/image/SAP_9265.jpg';
+import mapImage from '@/assets/image/SAP_9265.jpg';
 
 const HeadingSearchSection: FC = () => {
   return (

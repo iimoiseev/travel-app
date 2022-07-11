@@ -5,7 +5,7 @@ import {
   Geography,
   ZoomableGroup,
 } from 'react-simple-maps';
-import { TypeLocation } from '../../../../types/place';
+import { TypeLocation } from '@/types/place';
 
 import styles from './Information.module.scss';
 
