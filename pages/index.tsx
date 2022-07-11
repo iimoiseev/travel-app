@@ -1,4 +1,4 @@
-import Layout from '@/components/common/Layout';
+import Layout from '@/common/Layout';
 import { NextPage, GetStaticProps } from 'next';
 import { IPlace } from '@/types/place';
 import Search from '@/components/elements/Search/Search';
