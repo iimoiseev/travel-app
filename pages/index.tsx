@@ -7,6 +7,7 @@ import HeadingSearchSection from '@/components/elements/Home/HeadingSearchSectio
 import { Api_Url } from '../app/constants';
 import PopularPlaces from '@/components/elements/Home/PopularPlaces/PopularPlaces';
 import { useState } from 'react';
+import Meta from 'utils/Meta';
 
 interface IHome {
   initialPlaces: IPlace[];
@@ -17,6 +18,10 @@ const Home: NextPage<IHome> = ({ initialPlaces }) => {
   const [isLoading, setIsLoading] = useState(false);
   return (
     <Layout>
+      <Meta
+        title="Book your future trip"
+        description="Best routes for travelling"
+      />
       <HeadingSearchSection />
       <div style={{ width: '80%', margin: '0 auto' }}>
         <Search
